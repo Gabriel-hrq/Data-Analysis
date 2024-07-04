@@ -42,14 +42,19 @@ def bar_graph_plot(x,y,title,uf):
     plt.ylabel(y)
     plt.xlabel(x)
     for p in ax.patches:
-        ax.annotate(str(p.get_height()), (p.get_x(), p.get_height() * 1.10))
+        ax.annotate(str(p.get_height()), (p.get_x(), p.get_height() * 1.01))
     plt.tight_layout()
     plt.show()
+
+def max_value(data):
+    
+
 
 
 def main():
     variables_description(df)
     analise_faturamento(uf)
     bar_graph_plot("REGIAO","VLRFATURADO","Valor faturado por região", uf)  #Grafico faturamento x regiao
+
 
 main()
