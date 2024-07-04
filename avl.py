@@ -20,7 +20,7 @@ class AVL:
             return y
 
     def __RotacaoLL(self, A):
-        print('RotacaoLL: ',A.info);
+        #print('RotacaoLL: ',A.info);
         B = A.esq
         A.esq = B.dir
         B.dir = A
@@ -30,7 +30,7 @@ class AVL:
         return B
 
     def __RotacaoRR(self, A):
-        print('RotacaoRR: ',A.info);
+        #print('RotacaoRR: ',A.info);
         B = A.dir
         A.dir = B.esq
         B.esq = A
@@ -101,11 +101,33 @@ class AVL:
             self.__emOrdem(raiz.esq)
             print(raiz.info,raiz.regiao, end=' ')
             self.__emOrdem(raiz.dir)
+        else:
+            print("\n")
 
     def emOrdem(self):
         if(self.__raiz != None):
             self.__emOrdem(self.__raiz)
     
+
+    def busca_maior(self):
+        if self.__raiz is None:
+            return None
+        
+        atual = self.__raiz
+        while atual.dir is not None:
+            atual = atual.dir
+        
+        return atual.regiao,atual.info
+    
+    def busca_menor(self):
+        if self.__raiz is None:
+            return None
+        
+        atual = self.__raiz
+        while atual.esq is not None:
+            atual = atual.esq
+        
+        return atual.regiao,atual.info
 
 '''TESTE
 
