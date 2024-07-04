@@ -112,7 +112,7 @@ QTDFATURADA -> Quantidade de itens faturados
 
 VLRFATURADO -> Valor total dos itens faturados
 
-###########################################################################################
+#######################################################################################
 
 -Erros encontrados: ->Erro git push
 
@@ -122,7 +122,7 @@ git log #para ver o histórico de commits e em quais branchs eles estão
 
 Percebi que tinham 2 branchs com commits diferentes, então usei git merge dev master
 
-###########################################################################################
+#######################################################################################
 
 -Por que usar arvore AVL?
 Velocidade de busca
