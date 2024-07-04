@@ -1,3 +1,6 @@
+from node import NODE
+from avl import AVL
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from pandas import read_excel
@@ -46,15 +49,21 @@ def bar_graph_plot(x,y,title,uf):
     plt.tight_layout()
     plt.show()
 
-def max_value(data):
-    
-
+def avl_dataframe(data):
+    arv = AVL()
+    for index, row in data.iterrows():
+        arv.insere(row["VLRFATURADO"], row["REGIAO"])
+    return arv
 
 
 def main():
     variables_description(df)
     analise_faturamento(uf)
     bar_graph_plot("REGIAO","VLRFATURADO","Valor faturado por região", uf)  #Grafico faturamento x regiao
-
+    arv = avl_dataframe(uf)
+    arv.emOrdem()
+    print("Região com maior valor faturado: ",arv.busca_maior(),"\n",
+          "Região com menor valor faturado: ",arv.busca_menor()
+          )
 
 main()
